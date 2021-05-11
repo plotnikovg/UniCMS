@@ -60,16 +60,16 @@
     <div class="hello" onmouseover="closeMenu()">
         <div class="hello1">
             <div class="change">
-                    <span class="title" style="font-size: 52px; margin-left: 40px; margin-bottom: 95px;">Изменить товар</span>
-                    <div class="selectName" style="display: flex; margin-left: 40px;">
-                        <span style="margin-right: 20px;">Выберите Имя</span>
-                        <select id="checkClick" style="font-size: 20px;">
-                            @foreach (var item in Model)
-                            {
-                                <option id="checkId" value="@item.Id">@item.Name</option>
-                            }
-                        </select>
-                    </div>
+                <span class="title" style="font-size: 52px; margin-left: 40px; margin-bottom: 95px;">Изменить товар</span>
+                <div class="selectName" style="display: flex; margin-left: 40px;">
+                    <span style="margin-right: 20px;">Выберите Имя</span>
+                    <select id="checkClick" style="font-size: 20px;">
+                        @foreach (var item in Model)
+                        {
+                            <option id="checkId" value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
                 <form action="@Url.Action("Update","Admin")" method="post">
                     <div id="result">
                         <input id="xxx" type="hidden" name="Id" />
@@ -93,6 +93,6 @@
     </div>
     <script src="~/jquery/jquery.min.js"></script>
     <script src="~/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
-    <script src="~/main.js"></script>
+    <script src="~/JavaScript.js"></script>
 </body>
 </html>
