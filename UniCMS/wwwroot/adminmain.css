@@ -1,0 +1,114 @@
+body {
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    background-image: url(img/bg.png);
+}
+
+.adminsection {
+    margin-right:300px;
+    position: absolute;
+    width: 95px;
+    height: 100vh;
+    background-color: #48577D;
+}
+
+#adminhidden1 * {
+}
+
+#adminhidden1 {
+    display: flex;
+    margin-left: -185px;
+    transition: all 200ms;
+}
+
+#adminhidden2 {
+    background-color: #48577D;
+    width: 180px;
+    height: 100vh;
+}
+
+.white {
+    opacity: 0;
+    height: 100vh;
+    width: 45px;
+    background-color: #fff;
+}
+
+#adminhidden1.active {
+    margin-left: 95px;
+    transition: all 200ms;
+}
+
+.hello {
+    max-width: 1200px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    left: 320px;
+}
+
+.hellotext {
+    line-height: 100vh;
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+}
+
+.selectName{
+    align-items: center;
+}
+select{
+    height: 33px;
+}
+
+.change .title,
+.change .selectName,
+.change #result,
+.change button{
+    margin-left: 40px;
+    display: block;
+    margin-bottom: 60px;
+}
+#result *{
+    display: block;
+}
+
+#result div{
+    margin-bottom: 20px;
+}
+
+.change span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 42px;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: 81px;
+}
+#adminhidden2 div{
+    line-height: 81px;
+}
+#adminhidden2 div a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+#save {
+    background-color: #48577D;
+    color: #FFF;
+    border: 0;
+}
+
+#save:hover {
+    background-color: #429341;
+}

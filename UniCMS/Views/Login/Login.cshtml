@@ -1,0 +1,56 @@
+﻿@model UniCMS.Data.Models.User
+@{
+  ViewBag.Title = "Добавление пользователя";
+}
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="~/main.css" />
+    <script src="~/jquery/jquery.min.js"></script>
+    <script src="~/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+</head>
+<body>
+    <div id="authorizationPage">
+        <form id="formJS" action="@Url.Action("EnterLogin", "Login")" method="post">
+            <span style="margin-left:59px; font-family:Montserrat;">Вход</span>
+            <input id="UserName" name="UserName" placeholder="Логин" runat="server" oninput="Valid()" value="@ViewBag.UserName" style="margin-top: 144px;margin-bottom: 27px;"  />
+            <input id="Password" name="Password" placeholder="Пароль" type="password" oninput="Valid()" value="@ViewBag.Password" style="margin-top: 212px;">
+            <button type="submit" style="display:none;">Отправить</button>
+            <script>
+
+                function Valid() {
+                    let userName = $('#UserName').val();
+                    let password = $('#Password').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("Login", "Login")',
+                        data: { UserName: userName, Password: password },
+                        datatype: 'json',
+                        success: function (result) {
+                            if (result.returnvalue == true) {
+                                window.location = '@Url.Action("Admin","Admin")';                           
+                            }
+                        },
+                        error: function () {
+                            alert('Bruuh');
+                        },
+                    });
+                };
+
+                /*var Time = 5000;
+                function RedBorder() {
+                    document.getElementById("UserName").classList.toggle("red");
+                    console.log("red");
+                };
+                function Timer() {
+                    let Time = 5000;
+                    clearTimeout(Timer);
+                    let Timer = setTimeout(RedBorder, Time);
+
+                    let form = document.getElementById("formJS");
+                    form.submit();
+                }*/
+            </script>
+        </form>
+    </div>
+    
+</body>
