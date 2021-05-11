@@ -47,7 +47,7 @@ namespace UniCMS
       using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
       {
         var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationContext>();
-        CreateNewAdmin.NewAdmin(context);
+        CreateNewAdmin.NewAdmin(context); //Вызов метода для инициализации БД
       }
       if (env.IsDevelopment())
       {
